@@ -61,13 +61,16 @@ The basic usage is giving a path to a test (or task) file or directory as an
 argument with possible command line options before the path::
 
 
-    robot -d reports BROWSER:chrome Test_Suite ----> To run entire test suite
+    robot -d reports BROWSER:chrome Test_Suite ---> To run entire test suite
 
-    robot -d reports BROWSER:chrome Test_Suite/M01_Book_Flight -----> To run entire tests in that particular module
+    robot -d reports BROWSER:chrome Test_Suite/M01_Book_Flight ---> To run entire tests in that particular module
 
-    robot -d reports BROWSER:chrome Test_Suite/M01_Book_Flight/TC001_Book_Flight.robot -----> To run particular test in that particular module
+    robot -d reports BROWSER:chrome Test_Suite/M01_Book_Flight/TC001_Book_Flight.robot ---> To run particular test in that particular module
 
-	pabot -d reports --argumentfile1 arg_chrome.txt --argumentfile2 arg_firefox.txt -v Test_Suite
+	pabot --argumentfile1 Config/arg_chrome.txt --argumentfile2 Config/arg_firefox.txt -v BASEURL:https://www.orbitz.com/ -d reports Test_Suite ---> To run parallel execution
+
+    * BROWSER: It is set as variable where any browser can be used
+    ** Webdrivers need to be set in sytem/environment path
 
 Editors to be used
 ------------------
